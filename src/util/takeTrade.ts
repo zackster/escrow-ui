@@ -5,6 +5,14 @@ import { ESCROW_ACCOUNT_DATA_LAYOUT, EscrowLayout } from "./layout";
 
 const connection = new Connection("http://localhost:8899", 'singleGossip');
 
+export const getAccountInfo = async (addressString: string) => {
+
+	const accountInfo = await connection.getAccountInfo(new PublicKey(addressString), 'singleGossip');
+	console.log(accountInfo!.data);
+
+};
+
+
 export const takeTrade = async (
     privateKeyByteArray: string,
     escrowAccountAddressString: string,

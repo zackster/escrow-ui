@@ -36,7 +36,9 @@
 
 <script lang="ts"> 
 import { defineComponent, reactive } from 'vue';
-import { takeTrade } from "./util/takeTrade";
+import { takeTrade, getAccountInfo } from "./util/takeTrade";
+
+(window as any).getAccountInfo = getAccountInfo;
 
 export default defineComponent({
     setup() {
